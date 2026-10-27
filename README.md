@@ -6,11 +6,11 @@ The objective is to predict the probability that a customer will purchase an ele
 
 ## Competition
 
-* **Competition:** Playground Series S6E9 – Predicting Electric Vehicle Purchases
-* **Task:** Binary classification
-* **Evaluation Metric:** ROC-AUC
-* **Kaggle:** `anjulaprasad`
-* **Final project status:** Baseline completed and submitted
+- **Competition:** Playground Series S6E9 – Predicting Electric Vehicle Purchases
+- **Task:** Binary classification
+- **Evaluation Metric:** ROC-AUC
+- **Kaggle:** `anjulaprasad`
+- **Final project status:** Baseline completed and submitted
 
 ## Dataset
 
@@ -36,22 +36,22 @@ The target is moderately imbalanced, making probability-based evaluation with RO
 
 **Numerical**
 
-* `Age`
-* `Annual_Income_USD`
-* `Daily_Commute_km`
-* `Number_of_Cars_Owned`
-* `Charging_Stations_Near_Home`
-* `Charging_Stations_Near_Work`
-* `Environmental_Concern_Level`
+- `Age`
+- `Annual_Income_USD`
+- `Daily_Commute_km`
+- `Number_of_Cars_Owned`
+- `Charging_Stations_Near_Home`
+- `Charging_Stations_Near_Work`
+- `Environmental_Concern_Level`
 
 **Categorical**
 
-* `Gender`
-* `City_Type`
-* `Current_Car_Type`
-* `Home_Charging_Possible`
-* `Subsidy_Available`
-* `Range_Anxiety_Level`
+- `Gender`
+- `City_Type`
+- `Current_Car_Type`
+- `Home_Charging_Possible`
+- `Subsidy_Available`
+- `Range_Anxiety_Level`
 
 The `id` column is unique/sequential and was excluded from model training.
 
@@ -81,12 +81,12 @@ The EDA focused on understanding the target distribution and identifying relatio
 
 Key observations included:
 
-* The target variable is moderately imbalanced.
-* `Subsidy_Available` showed a strong relationship with EV purchase rates.
-* `Range_Anxiety_Level` showed substantial differences in purchase rates between categories.
-* `Environmental_Concern_Level` showed noticeable separation between buyers and non-buyers.
-* `Annual_Income_USD` also showed meaningful group-level differences.
-* Gender, car ownership, and charging-station features showed comparatively smaller group-level differences.
+- The target variable is moderately imbalanced.
+- `Subsidy_Available` showed a strong relationship with EV purchase rates.
+- `Range_Anxiety_Level` showed substantial differences in purchase rates between categories.
+- `Environmental_Concern_Level` showed noticeable separation between buyers and non-buyers.
+- `Annual_Income_USD` also showed meaningful group-level differences.
+- Gender, car ownership, and charging-station features showed comparatively smaller group-level differences.
 
 The complete analysis is available in the competition notebook.
 
@@ -157,6 +157,20 @@ The baseline submission achieved:
 
 The small difference between the local validation result and the public leaderboard score indicates that the validation setup produced a reasonably consistent estimate of leaderboard performance for this baseline.
 
+## Published Model
+
+The trained preprocessing and Logistic Regression pipeline is available
+on [Hugging Face](https://huggingface.co/amarakoon2001/ev-purchase-prediction).
+
+The model repository includes:
+
+- The saved pipeline: `ev_purchase_pipeline_bundle.joblib`
+- Input feature documentation
+- Python instructions for downloading and running predictions
+- Evaluation results and limitations
+
+The pipeline can be loaded for inference without retraining.
+
 ## Kaggle Submission
 
 The submission contains the original test `id` and the predicted probability of purchasing an EV.
@@ -201,13 +215,13 @@ The project uses a fixed random seed for the train/validation split and model in
 
 Main dependencies include:
 
-* Python
-* NumPy
-* Pandas
-* Matplotlib
-* Seaborn
-* Scikit-learn
-* Jupyter
+- Python
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Jupyter
 
 Install the project dependencies with:
 
@@ -229,16 +243,16 @@ This project currently represents a completed and reproducible baseline submissi
 
 The implemented workflow covers:
 
-* Dataset exploration
-* Target analysis
-* Feature identification
-* Stratified validation
-* Numerical feature scaling
-* Categorical feature encoding
-* Logistic Regression training
-* Probability-based ROC-AUC evaluation
-* Kaggle submission generation
-* Local vs. leaderboard comparison
+- Dataset exploration
+- Target analysis
+- Feature identification
+- Stratified validation
+- Numerical feature scaling
+- Categorical feature encoding
+- Logistic Regression training
+- Probability-based ROC-AUC evaluation
+- Kaggle submission generation
+- Local vs. leaderboard comparison
 
 Further iterations could investigate feature engineering, alternative tabular models, and targeted hyperparameter tuning.
 
